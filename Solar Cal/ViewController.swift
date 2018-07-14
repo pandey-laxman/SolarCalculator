@@ -104,7 +104,7 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        LocationNotification.shared.registerNotification(at: (self.sunRiseSetTime?.sunrise)!, data: locationData, timezone: currentTimezone) { (isSuccess) in
+        LocationNotification.shared.registerNotification(at: (self.sunRiseSetTime?.sunset)!, data: locationData, timezone: currentTimezone) { (isSuccess) in
             if(isSuccess) {
                 print("Notification Registered")
             }

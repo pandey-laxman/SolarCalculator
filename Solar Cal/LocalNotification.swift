@@ -24,11 +24,12 @@ class LocationNotification: NSObject {
         content.body = "@\(title),\(subTitle)"
         content.sound = UNNotificationSound.default()
         
+        let oneHourAgoDate = date.addingTimeInterval(-3600) // alert one hour before sunset
+        
         let calendar = Calendar.current
-    
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let seconds = calendar.component(.second, from: date)
+        let hour = calendar.component(.hour, from: oneHourAgoDate)
+        let minutes = calendar.component(.minute, from: oneHourAgoDate)
+        let seconds = calendar.component(.second, from: oneHourAgoDate)
         
         
         var dateComponents = DateComponents()
